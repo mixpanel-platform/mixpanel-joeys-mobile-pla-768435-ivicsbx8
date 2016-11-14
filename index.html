@@ -15,7 +15,9 @@
         MP.api.query('/api/2.0/custom_events/').done(function(results){
           console.log(results)
           x = results['custom_events']
-          console.log(x)
+          _.each(x, function(item){
+            mapping[item['id']] = item['name']
+          })
           console.log(mapping)
         })
       }
